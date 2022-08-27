@@ -1,8 +1,11 @@
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:ecommerce/models/category_model.dart';
+
 import 'package:ecommerce/models/product_model.dart';
 import 'package:ecommerce/widgets/widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../blocs/wishlist/wishlist_bloc.dart';
 
 class ProductScreen extends StatelessWidget {
   static const String routeName = '/product';
@@ -23,7 +26,7 @@ class ProductScreen extends StatelessWidget {
         appBar: CustomAppBar(title: product.name),
         bottomNavigationBar: BottomAppBar(
           color: Colors.black,
-          child: Container(
+          child: SizedBox(
             height: 70,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -34,12 +37,24 @@ class ProductScreen extends StatelessWidget {
                       Icons.share,
                       color: Colors.white,
                     )),
-                IconButton(
-                    onPressed: () {},
-                    icon: const Icon(
-                      Icons.favorite,
-                      color: Colors.white,
-                    )),
+                BlocBuilder<WishlistBloc, WishlistState>(
+                  builder: (context, state) {
+                    return IconButton(
+                      icon: const Icon(
+                        Icons.favorite,
+                        color: Colors.white,
+                      ),
+                      onPressed: () {
+                        context
+                            .read()<WishlistBloc>()
+                            .add(AddWishlistProduct(product));
+                        const snackBar =
+                            SnackBar(content: Text('Added to your wishlist'));
+                        ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                      },
+                    );
+                  },
+                ),
                 ElevatedButton(
                     style: ElevatedButton.styleFrom(primary: Colors.white),
                     onPressed: () {},
