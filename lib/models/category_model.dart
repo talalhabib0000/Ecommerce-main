@@ -11,20 +11,24 @@ class Category extends Equatable {
 
   static List<Category> categories = [
     const Category(
-        name: 'Smootes',
-        imageUrl:
-            'https://images.unsplash.com/photo-1647891936623-df2c0f19ca9c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80'),
+      name: 'Magnesium+Calcium+D3',
+      imageUrl:
+          'https://th.bing.com/th/id/R.3cf968deea9319f21d77855dea710cc2?rik=DE%2bMNszqYqqwYA&pid=ImgRaw&r=0',
+    ),
     const Category(
-        name: 'Soft Drink',
-        imageUrl:
-            'https://images.unsplash.com/photo-1647891936623-df2c0f19ca9c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80'),
+      name: 'Coenzyme q10 dopper hetz',
+      imageUrl:
+          'https://th.bing.com/th/id/R.7f22246d484ad80b2cafcbebe5e110ad?rik=VKOTasXmRZ5k%2fA&pid=ImgRaw&r=0',
+    ),
     const Category(
-        name: 'Drink',
-        imageUrl:
-            'https://images.unsplash.com/photo-1647891936623-df2c0f19ca9c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80'),
+      name: 'For Joints',
+      imageUrl:
+          'https://th.bing.com/th/id/R.fd637068e74c0dd5ff2f72735645261a?rik=glaybMiHwRMfBg&pid=ImgRaw&r=0',
+    ),
     const Category(
-        name: 'Water Drink',
-        imageUrl:
-            'https://images.unsplash.com/photo-1647891936623-df2c0f19ca9c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80'),
+      name: 'Omega-3',
+      imageUrl:
+          'https://th.bing.com/th/id/R.9fb5f07d90489ef55f504e5858811636?rik=CraBMp46rYrk%2fw&pid=ImgRaw&r=0&sres=1&sresct=1',
+    ),
   ];
 }
