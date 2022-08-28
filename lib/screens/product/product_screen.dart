@@ -1,4 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:ecommerce/blocs/cart/cart_bloc.dart';
 
 import 'package:ecommerce/models/product_model.dart';
 import 'package:ecommerce/widgets/widgets.dart';
@@ -55,13 +56,22 @@ class ProductScreen extends StatelessWidget {
                     );
                   },
                 ),
-                ElevatedButton(
-                    style: ElevatedButton.styleFrom(primary: Colors.white),
-                    onPressed: () {},
-                    child: Text(
-                      'ADD TO CART',
-                      style: Theme.of(context).textTheme.headline3!,
-                    ))
+                BlocBuilder<CartBloc, CartState>(
+                  builder: (context, state) {
+                    return ElevatedButton(
+                        style: ElevatedButton.styleFrom(primary: Colors.white),
+                        onPressed: () {
+                          context
+                              .read<CartBloc>()
+                              .add(CartProductAdded(product));
+                          Navigator.pushNamed(context, '/cart');
+                        },
+                        child: Text(
+                          'ADD TO CART',
+                          style: Theme.of(context).textTheme.headline3!,
+                        ));
+                  },
+                )
               ],
             ),
           ),

@@ -12,7 +12,7 @@ TextTheme textTheme() {
   return const TextTheme(
     headline1: TextStyle(
         color: Colors.black,
-        fontSize: 32,
+        fontSize: 22,
         fontFamily: 'Avenir',
         fontWeight: FontWeight.bold),
     headline2: TextStyle(
