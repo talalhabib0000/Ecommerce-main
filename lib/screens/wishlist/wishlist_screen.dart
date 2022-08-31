@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../blocs/wishlist/wishlist_bloc.dart';
 
-
 class WishlistScreen extends StatelessWidget {
   static const String routeName = '/wishlist';
 
