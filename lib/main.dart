@@ -4,10 +4,11 @@ import 'package:ecommerce/config/app_router.dart';
 import 'package:ecommerce/screens/screens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
+import './simple_bloc_observer.dart';
 import 'config/theme.dart';
 
-void main() {
+void main() async {
+  Bloc.observer = SimpleBlocObserver();
   runApp(const MyApp());
 }
 

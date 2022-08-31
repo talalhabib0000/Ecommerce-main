@@ -82,7 +82,7 @@ class ProductCard extends StatelessWidget {
                     BlocBuilder<CartBloc, CartState>(
                       builder: (context, state) {
                         if (state is CartLoading) {
-                          return Center(
+                          return const Center(
                             child: CircularProgressIndicator(),
                           );
                         }
@@ -90,6 +90,11 @@ class ProductCard extends StatelessWidget {
                           return Expanded(
                             child: IconButton(
                                 onPressed: () {
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    const SnackBar(
+                                      content: Text('Added to your Cart!'),
+                                    ),
+                                  );
                                   context
                                       .read<CartBloc>()
                                       .add(CartProductAdded(product));
@@ -98,7 +103,7 @@ class ProductCard extends StatelessWidget {
                                     color: Colors.white)),
                           );
                         } else {
-                          return Text('Something Went Wrong');
+                          return const Text('Something Went Wrong');
                         }
                       },
                     ),

@@ -3,9 +3,6 @@ import 'package:ecommerce/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../models/cart_model.dart';
-import '../../models/product_model.dart';
-
 class CartScreen extends StatelessWidget {
   static const String routeName = '/cart';
 
@@ -92,10 +89,20 @@ class CartScreen extends StatelessWidget {
                         SizedBox(
                           height: 400,
                           child: ListView.builder(
-                              itemCount: state.cart.products.length,
+                              itemCount: state.cart
+                                  .ProductQuanity(state.cart.products)
+                                  .keys
+                                  .length,
                               itemBuilder: (context, index) {
                                 return CartProductCard(
-                                  product: state.cart.products[index],
+                                  product: state.cart
+                                      .ProductQuanity(state.cart.products)
+                                      .keys
+                                      .elementAt(index),
+                                  quantity: state.cart
+                                      .ProductQuanity(state.cart.products)
+                                      .values
+                                      .elementAt(index),
                                 );
                               }),
                         ),
